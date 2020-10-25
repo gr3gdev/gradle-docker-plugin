@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.4.10"
     `java-gradle-plugin`
     `maven-publish`
+    id("com.gradle.plugin-publish") version "0.12.0"
 }
 
 group = "gregdev.gradle.docker"
@@ -26,6 +27,12 @@ publishing {
             from(components["java"])
         }
     }
+}
+
+pluginBundle {
+    website = "https://github.com/gr3gdev/gradle-docker-plugin"
+    vcsUrl = "https://github.com/gr3gdev/gradle-docker-plugin"
+    tags = listOf("docker", "docker-compose", "run", "push")
 }
 
 gradlePlugin {
